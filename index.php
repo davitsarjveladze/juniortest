@@ -41,15 +41,15 @@
          * display them
          */
         $dvd = new back\classes\DVD();
-        $dvd ->setValue($selectForDvd);
+        $dvd ->setValue($selectAllCard);
         $dvd ->getValue();
 
         $book = new back\classes\Book();
-        $book->setValue($selectForBook);
+        $book->setValue($selectAllCard);
         $book->getValue();
 
         $furniture = new back\classes\Furniture();
-        $furniture ->setValue($selectForFurniture);
+        $furniture ->setValue($selectAllCard);
         $furniture ->getValue();
 
          ?>

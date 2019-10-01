@@ -1,8 +1,12 @@
 <?php
+/**
+ * require all need file
+ */
 $config = require_once 'back/configs/dataBaseConfig.php';
 require_once 'back/classes/DataBase.php';
 $db = new back\classes\DataBase($config['dataBaseConfig']);
+/**
+ * select all card for product
+ */
 
-$selectForFurniture = $db->query("SELECT * FROM products_info WHERE type='​Furniture'");
-$selectForBook = $db->query("SELECT * FROM products_info WHERE type='book'");
-$selectForDvd = $db->query("SELECT * FROM products_info WHERE type='DVDdisc'");
+$selectAllCard = $db->query("SELECT * FROM products_info");

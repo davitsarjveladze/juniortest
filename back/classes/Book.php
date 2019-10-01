@@ -25,12 +25,16 @@ class Book extends Product
     public function setValue($arrayInfo)
     {
         $this->count = count($arrayInfo);
-        for ($i=0 ;$this->count>$i; $i++){
-            $this->sku[]= $arrayInfo[$i]["sku"];
-            $this->name[]= $arrayInfo[$i]["name"];
-            $this->price[]= $arrayInfo[$i]["price"];
-            $this->weight[]= $arrayInfo[$i]["weight"];
+        for ($i=0 ;count($arrayInfo)>$i; $i++){
+            if ('Book' === $arrayInfo[$i]["type"]){
+                $this->sku[]= $arrayInfo[$i]["sku"];
+                $this->name[]= $arrayInfo[$i]["name"];
+                $this->price[]= $arrayInfo[$i]["price"];
+                $this->weight[]= $arrayInfo[$i]["weight"];
+            }
         }
+        $this->count = count($this->weight);
+
 
     }
 

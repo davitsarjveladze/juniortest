@@ -31,15 +31,17 @@ class Furniture extends Product
      */
     public function setValue($arrayInfo)
     {
-        $this->count = count($arrayInfo);
-        for ($i=0 ;count($arrayInfo)>$i; $i++){
-            $this->sku[]= $arrayInfo[$i]["sku"];
-            $this->name[]= $arrayInfo[$i]["name"];
-            $this->height[]= $arrayInfo[$i]["height"];
-            $this->width[]= $arrayInfo[$i]["width"];
-            $this->length[]= $arrayInfo[$i]["length"];
-        }
 
+        for ($i=0 ;count($arrayInfo)>$i; $i++){
+            if ('​Furniture' === $arrayInfo[$i]["type"]) {
+                $this->sku[] = $arrayInfo[$i]["sku"];
+                $this->name[] = $arrayInfo[$i]["name"];
+                $this->height[] = $arrayInfo[$i]["height"];
+                $this->width[] = $arrayInfo[$i]["width"];
+                $this->length[] = $arrayInfo[$i]["length"];
+            }
+        }
+        $this->count = count($this->length);
 
     }
 

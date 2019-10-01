@@ -32,13 +32,15 @@ class DVD extends Product
     public function setValue($arrayInfo)
     {
         $this->count = count($arrayInfo);
-        for ($i=0 ;$this->count>$i; $i++){
-            $this->sku[]= $arrayInfo[$i]["sku"];
-            $this->name[]= $arrayInfo[$i]["name"];
-            $this->price[]= $arrayInfo[$i]["price"];
-            $this->size[]= $arrayInfo[$i]["size"];
+        for ($i=0 ;count($arrayInfo)>$i; $i++){
+            if ('DVDdisc' === $arrayInfo[$i]["type"]){
+                $this->sku[]= $arrayInfo[$i]["sku"];
+                $this->name[]= $arrayInfo[$i]["name"];
+                $this->price[]= $arrayInfo[$i]["price"];
+                $this->size[]= $arrayInfo[$i]["size"];
+            }
         }
-
+        $this->count = count($this->size);
     }
 
     /**
